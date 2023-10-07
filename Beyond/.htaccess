@@ -1,0 +1,21 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/atstlbzy/budherabliss-plots.com"
+PassengerBaseURI "/"
+PassengerPython "/home/atstlbzy/virtualenv/budherabliss-plots.com/3.9/bin/python"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
+
+# Set default handler to WSGI
+AddHandler wsgi-script .wsgi
+
+# Pass all other requests to Django application
+WSGIScriptAlias / /home/atstlbzy/budherabliss-plots.com/passenger_wsgi.py
+
+<Directory /home/atstlbzy/budherabliss-plots.com>
+    <Files passenger_wsgi.py>
+        Require all granted
+    </Files>
+</Directory>
